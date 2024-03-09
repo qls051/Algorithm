@@ -2,13 +2,15 @@
 #include<cmath>
 using namespace std;
 
-int main() {
-    
-    long long n{}, m{};
-
-    cin >> n >> m;
-
-    cout << abs(n - m);
-
-    return 0;
+int factorial(int n) {
+    if (n > 2)
+        n *= factorial(n - 1);
+    return n;
+}
+int main(void) {
+    int num, result = 1;
+    cin >> num;
+    if (num != 0)
+        result = factorial(num);
+    cout << result;
 }
