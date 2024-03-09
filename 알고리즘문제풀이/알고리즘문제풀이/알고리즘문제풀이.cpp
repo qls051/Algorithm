@@ -3,23 +3,16 @@ using namespace std;
 
 int main() {
     
+    int arr[31] = { 0, };
     int n{};
-    int arr[101];
-    int v{};
 
-    cin >> n;
-
-    for (int i = 0; i < n; i++) {
-        cin >> arr[i];
+    for (int i = 0; i < 28; i++){
+        cin >> n;
+        arr[n] = 1;
     }
-    cin >> v;
-
-    int res = 0;
-    for (int i = 0; i < n; i++) {
-        if (arr[i] == v)
-            res++;
+    for (int i = 1; i <= 30; i++) {
+        if (!arr[i]) cout << i << '\n';
     }
-    cout << res;
 
     return 0;
 }
