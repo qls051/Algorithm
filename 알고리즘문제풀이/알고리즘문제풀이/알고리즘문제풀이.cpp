@@ -1,17 +1,26 @@
-#include<iostream>
+#include <iostream>
+#include <string>
+#include <cctype>
 using namespace std;
 
 int main() {
-    
-    int arr[31] = { 0, };
-    int n{};
+    string st;
+    int count;
 
-    for (int i = 0; i < 28; i++){
-        cin >> n;
-        arr[n] = 1;
-    }
-    for (int i = 1; i <= 30; i++) {
-        if (!arr[i]) cout << i << '\n';
+    while (getline(cin, st)) {
+        if (st == "#")
+            break;
+
+        count = 0; 
+
+        for (char& c : st) {
+            c = tolower(c);
+            if (isalpha(c) && (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u')) {
+                count++;
+            }
+        }
+
+        cout << count << '\n';
     }
 
     return 0;
