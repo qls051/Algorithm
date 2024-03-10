@@ -1,27 +1,28 @@
 #include <iostream>
 #include <string>
-#include <cctype>
+#include <cstring>
 using namespace std;
 
 int main() {
-    string st;
-    int count;
+    
+    string name;
+    int age{};
+    int weight{};
 
-    while (getline(cin, st)) {
-        if (st == "#")
+    while (cin >> name >> age >> weight)
+    {
+        if (name == "#" && age == 0 && weight == 0)
             break;
 
-        count = 0; 
-
-        for (char& c : st) {
-            c = tolower(c);
-            if (isalpha(c) && (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u')) {
-                count++;
-            }
+        if (age > 17 || weight >= 80) {
+            cout << name << " " << "Senior" << '\n';
         }
-
-        cout << count << '\n';
+        else {
+            cout << name << " " << "Junior" << '\n';
+        }
     }
+
+    
 
     return 0;
 }
