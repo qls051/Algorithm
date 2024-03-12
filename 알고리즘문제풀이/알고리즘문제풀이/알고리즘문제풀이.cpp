@@ -1,26 +1,28 @@
 #include <iostream>
-#include <algorithm>
 using namespace std;
 
 int main() {
 
-    int num, num2, num3;
+    int a{}, b{}, c{};
+    cin >> a >> b >> c;
 
-    cin >> num >> num2 >> num3;
-
-    if (num != num2 && num2 != num3 && num != num3) {
-        int m;
-        m = max({ num,num2,num3 });
-        cout << m * 100;
+    if (a > b && a > c && b > c) {
+        cout << c << " " << b << " " << a;
     }
-    else if (num == num2 && num == num3) {
-        cout << 10000 + num * 1000;
+    else if (a > b && a > c && c > b) {
+        cout << b << " " << c << " " << a;
     }
-    else if (num == num2 || num == num3) {
-        cout << 1000 + num * 100;
+    else if (b > a && b > c && a > c) {
+        cout << c << " " << a << " " << b;
+    }
+    else if (b > a && b > c && c > a) {
+        cout << a << " " << c << " " << b;
+    }
+    else if (c > a && c > b && a > b) {
+        cout << b << " " << a << " " << c;
     }
     else {
-        cout << 1000 + num2 * 100;
+        cout << a << " " << b << " " << c;
     }
 
     return 0;
