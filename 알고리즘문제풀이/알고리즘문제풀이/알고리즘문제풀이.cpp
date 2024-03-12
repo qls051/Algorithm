@@ -3,20 +3,19 @@ using namespace std;
 
 int main() {
 
-    int num[5]{0};
+    int sangduk{}, jongduk{}, haduk{}, cola{}, sprite{};
 
-    int a = 0;
-    int sum = 0;
+    cin >> sangduk;
+    cin >> jongduk;
+    cin >> haduk;
+    cin >> cola;
+    cin >> sprite;
 
-    for (int i = 0; i < 5; i++) {
-        cin >> a;
-
-        if (a < 40) a = 40;
-
-        sum += a;
-    }
-
-    cout << sum / 5;
+    int burgerMin = min(sangduk, jongduk);
+    burgerMin = min(burgerMin, haduk);
+    int drinkMin = min(cola, sprite);
+    int minPrice = burgerMin + drinkMin - 50;
+    cout << minPrice << '\n';
 
     return 0;
 }
