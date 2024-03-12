@@ -3,27 +3,20 @@ using namespace std;
 
 int main() {
 
-    int a{}, b{}, c{};
-    cin >> a >> b >> c;
+    int num[5]{0};
 
-    if (a > b && a > c && b > c) {
-        cout << c << " " << b << " " << a;
+    int a = 0;
+    int sum = 0;
+
+    for (int i = 0; i < 5; i++) {
+        cin >> a;
+
+        if (a < 40) a = 40;
+
+        sum += a;
     }
-    else if (a > b && a > c && c > b) {
-        cout << b << " " << c << " " << a;
-    }
-    else if (b > a && b > c && a > c) {
-        cout << c << " " << a << " " << b;
-    }
-    else if (b > a && b > c && c > a) {
-        cout << a << " " << c << " " << b;
-    }
-    else if (c > a && c > b && a > b) {
-        cout << b << " " << a << " " << c;
-    }
-    else {
-        cout << a << " " << b << " " << c;
-    }
+
+    cout << sum / 5;
 
     return 0;
 }
