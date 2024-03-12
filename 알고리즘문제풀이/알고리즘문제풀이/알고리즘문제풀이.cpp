@@ -1,28 +1,21 @@
 #include <iostream>
-#include <string>
-#include <cstring>
 using namespace std;
 
 int main() {
-    
-    string name;
-    int age{};
-    int weight{};
 
-    while (cin >> name >> age >> weight)
+    int n;
+    cin >> n;
+
+    for (int i = 1; i <= n; i++)
     {
-        if (name == "#" && age == 0 && weight == 0)
-            break;
-
-        if (age > 17 || weight >= 80) {
-            cout << name << " " << "Senior" << '\n';
+        for (int k = 0; k < n - i; k++) {
+            cout << " ";
         }
-        else {
-            cout << name << " " << "Junior" << '\n';
-        }
+        for (int j = 0; j < i; j++) {
+            cout << "*";
+        } 
+        cout << "\n";
     }
-
-    
 
     return 0;
 }
