@@ -3,17 +3,13 @@ using namespace std;
 
 int main() {
 
-    int N;
-    cin >> N;
+    int n{};
+    cin >> n;
 
-    for (int j = 0; j < N; j++)
+    while (n!=0)
     {
-        for (int i = N; i > j; i--)
-        {
-            cout << "*";
-        }
-        cout << "\n";
+        cout << n << '\n';
+        n--;
     }
-
     return 0;
 }
